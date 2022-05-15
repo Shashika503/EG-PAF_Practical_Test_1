@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container,
+     see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.electricgrid.meterconnection</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>meterconnection</display-name>
+    <servlet-name>meterconnection</servlet-name>
+    <servlet-class>serverlets.meterconnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>meterconnection</servlet-name>
+    <url-pattern>/meterconnection</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>meterconnectionAPI</display-name>
+    <servlet-name>meterconnectionAPI</servlet-name>
+    <servlet-class>serverlets.meterconnectionAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>meterconnectionAPI</servlet-name>
+    <url-pattern>/meterconnectionAPI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MeterconnectionAPI</display-name>
+    <servlet-name>MeterconnectionAPI</servlet-name>
+    <servlet-class>severvelets.MeterconnectionAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MeterconnectionAPI</servlet-name>
+    <url-pattern>/MeterconnectionAPI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginAPI</display-name>
+    <servlet-name>LoginAPI</servlet-name>
+    <servlet-class>severvelets.LoginAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginAPI</servlet-name>
+    <url-pattern>/LoginAPI</url-pattern>
+  </servlet-mapping>
+</web-app>
