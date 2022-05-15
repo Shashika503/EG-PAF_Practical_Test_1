@@ -97,7 +97,7 @@ public class MeterconnectionAPI extends HttpServlet {
 
 		Map<String, String> param = getParasMap(request);
 
-		String result = meterC.deletePayment(param.get("mc_id").toString());
+		String result = meterC.deleteMeterconnection(param.get("mc_id").toString());
 
 		response.getWriter().write(result);
 	}
